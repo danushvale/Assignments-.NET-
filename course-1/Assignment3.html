@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3</title>
+</head>
+<body>
+    <fieldset>
+        First Number :  
+        <input type="text" id="t1"  />
+        <br></br>
+        Second Number :  
+        <input type="text" id="t2"  />
+        <br></br>
+        <input type="button" onclick="f1()" value="Add"  />
+        <input type="button" onclick="f1(event)" value="Sub"  />
+        <input type="button" onclick="f1(event)" value="Mul"  />
+        <input type="button" onclick="f1(event)" value="Div"  />	
+        </br>
+        <p id="p1"></p>
+    </fieldset>
+
+    <script>
+
+        function f1() {
+            let paraObj = document.getElementById("p1");
+            let a = parseInt(document.getElementById("t1").value);
+            let b = parseInt(document.getElementById("t2").value);
+            let opp = event.target.value;
+            
+            if(opp == "Add"){
+                
+                paraObj.innerHTML ="Ans ="+(a+b);
+            }
+            else if(opp == "Sub"){
+                paraObj.innerHTML = "Ans = "+ (a-b);
+            }
+            else if(opp == "Mul"){
+                paraObj.innerHTML = "Ans = "+ (a*b);
+            }
+            else{
+                paraObj.innerHTML = "Ans = "+ (a/b);
+            }
+        }
+    </script>
+</body>
+</html>

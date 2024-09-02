@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2</title>
+</head>
+<body>
+    <fieldset>
+        Productname :  
+        <input type="text" id="t1"  />
+        <br></br>
+        UnitPrice :  
+        <input type="text" id="t2"  />
+        <br></br>
+        Quantity :  
+        <input type="text" id="t3"  />
+        <br></br>
+        <input type="button" onclick="f()" value="GetTotal"  />	 	
+        </br>
+        <p id="p1"></p>
+    </fieldset>
+
+    <script>
+        function f() {
+            let paraObj = document.getElementById("p1");
+            let up = parseInt(document.getElementById("t2").value);
+            let q = parseInt(document.getElementById("t3").value);
+            let total = up*q;
+            
+            if(q>=10 && q<=19){
+                total = total-(total*0.1);
+                paraObj.innerHTML = "Total Amount= "+total;
+            }
+            else if(q>=20 && q<=29){
+                total = total-(total*0.15);
+                paraObj.innerHTML = "Total Amount= "+total;
+            }
+            else if(q>=30){
+                total = total-(total*0.2);
+                paraObj.innerHTML = "Total Amount= "+total;
+            }
+            else{
+                paraObj.innerHTML = "Total Amount= "+total;
+            }
+        }
+    </script>
+</body>
+</html>
